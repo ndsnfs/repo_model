@@ -1,6 +1,6 @@
 <?php
 
-class Field extends Model
+class Field
 {
 	public $size = 9;
 
