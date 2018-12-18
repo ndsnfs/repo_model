@@ -12,13 +12,13 @@ class Game
 	 */
 	public $fields = [];
 
-	public function __construct(int $pk)
-	{ 
-// 		В последующем будут заполняться fields и players
-//		Ниже полная дичь, только для имитации 
-		$this->fields = array_filter(Storage::$battle, function($v) use ($pk) {
-			return $pk === $v['game_id'];
-		});
+	public function __construct(array $data)
+	{
+            foreach ($data as $sideId => $side)
+            {
+                $this->players[$sideId] = new Player($side['player_id'], $side['player_name']);
+                $this->fields[$sideId] = new Field($side['field']);
+            }
 	}
 
 	/**

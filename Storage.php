@@ -15,20 +15,21 @@ class Storage implements StoreDriver
 		['id' => 3, 'name' => 'Julia']
 	];
 
-// 	PRIMARY KEY (game_id, player_id)
-	public static $battle = [
-		['game_id' => 1, 'player_id' => 1],
-		['game_id' => 1, 'player_id' => 2],
-		['game_id' => 2, 'player_id' => 3]
+// 	PRIMARY KEY (id)
+	public static $sides = [
+		['id' => 1, 'game_id' => 1, 'player_id' => 1]
 	];
 
-// 	PRIMARY KEY (game_id, player_id)
+// 	PRIMARY KEY (id)
 	public static $fields = [
-		['game_id' => 1, 'player_id' => 1, 'coordinat' => '0:0', 'state' => 2],
-		['game_id' => 1, 'player_id' => 2, 'coordinat' => '0:1', 'state' => 2]
+		['id' => 1, 'side_id' => 1],
+		['id' => 2, 'side_id' => 2]
 	];
 
-//	public static $cells = [];
+	public static $cells = [
+		['field_id' => 1, 'coordinat' => '0:0', 'state' => 2],
+		['field_id' => 1, 'coordinat' => '0:1', 'state' => 2]
+	];
 
 	public function replace(string $table, array $data){}
 }

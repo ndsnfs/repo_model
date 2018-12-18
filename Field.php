@@ -11,7 +11,7 @@ class Field
 	/**
 	 * Происходит создание пустого поля
 	 */
-	public function __construct()
+	public function __construct(array $data = [])
 	{
 		$x = 0; $y = 0;
 

@@ -1,7 +1,7 @@
 <?php
 
 spl_autoload_register(function($class) {
-	require_once ucfirst($class) . ".php";
+	require_once $class . ".php";
 });
 
 
@@ -20,8 +20,7 @@ class Controller
 	 * Игрок заполняет свое поле
 	 */
 	public function prepare()
-	{
-
+	{            
 		if($this->game->isPrepared())
 		{
 			echo 'Игра подготовлена - играем. Redirect to step...'; exit;
@@ -60,4 +59,4 @@ class Controller
 }
 
 // допустим route такой
-(new Controller())->step();
+(new Controller())->prepare();
